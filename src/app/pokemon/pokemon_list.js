@@ -12,14 +12,28 @@ export async function PokemonList() {
     const pokemons = await getData();
     
     return (
-        <ul className="p-4 sm:px-0">
+        <ul className="grid grid-cols-12 gap-4">
             {pokemons.map((pokemon) => (
-                <li key={pokemon._id} className="text-xs sm:text-sm mb-4 rounded overflow-hidden transition-shadow shadow-sm hover:shadow">
-                    <div className="grid grid-cols-12 gap-2">
+                <li key={pokemon._id} className="col-span-full sm:col-span-10 sm:col-start-2 md:col-span-8 md:col-start-3 lg:col-span-6 text-xs sm:text-sm rounded overflow-hidden transition-shadow shadow-sm hover:shadow">
+                    <div className="grid grid-cols-12 gap-x-2">
+                        <div className="col-span-12 grid py-1 grid-cols-12 bg-gray-200 text-center font-semibold">
+                            <div className="col-span-2">
+                                No.
+                            </div>
+                            <div className="col-span-2 sm:col-span-3">
+                                Image
+                            </div>
+                            <div className="col-span-4 text-left">
+                                Pokémon
+                            </div>
+                            <div className="col-span-4 sm:col-span-3">
+                                Type
+                            </div>
+                        </div>
                         <div className="col-span-2 flex items-center justify-center">
                             {"#" + pokemon.number}
                         </div>
-                        <div className="col-span-2 sm:col-span-3 flex items-center justify-center relative">
+                        <div className="col-span-2 sm:col-span-3 py-2 flex items-center justify-center relative">
                             { 
                                 pokemon.image !== undefined ?
                                 <Image 
