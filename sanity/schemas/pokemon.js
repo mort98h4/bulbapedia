@@ -27,6 +27,16 @@ const schema = {
           title: 'Type'
         }
       ]
+    },
+    {
+      name: 'descriptionBlock',
+      title: 'Description',
+      type: 'array',
+      of: [
+        {
+          type: 'block' 
+        }
+      ]
     }
   ],
   orderings: [
