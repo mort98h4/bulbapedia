@@ -44,7 +44,7 @@ export default function PokemonListItem(props) {
                 <div className="col-span-4 sm:col-span-3 flex text-white">
                     {pokemon.types.map((type) => (
                         <div 
-                            key={type._id} 
+                            key={type._key} 
                             className={
                                 (pokemon.types.length === 1 ? "basis-full " : "basis-1/2 ") 
                                 + "flex items-center justify-center " 
