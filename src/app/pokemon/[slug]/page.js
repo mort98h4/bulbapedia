@@ -1,18 +1,12 @@
-import { client } from "../../../../sanity/lib/client";
 import Header from "../header";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import PokemonNavigation from "./components/pokemon_navigation";
 import PokemonCard from "./components/pokemon_card";
-
-async function getData(slug) {
-  const res = await client.fetch(`*[_type == "pokemon" && name match $pokemon]`, {pokemon: slug});
-  return res;
-}
+import { fetchPokemon } from "@/actions/fetch_pokemon";
 
 export default async function Page({ params }) {
-    let pokemon = await getData(params.slug);
-    pokemon = pokemon[0];
+    const pokemon = await fetchPokemon(params.slug)
 
     const components = {
       marks: {
