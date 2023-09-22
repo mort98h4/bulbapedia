@@ -1,7 +1,7 @@
-import { client } from "../../../sanity/lib/client";
+import { client } from '../../../../sanity/lib/client';
 import Link from 'next/link'
 import Image from 'next/image'
-import { urlForImage } from "../../../sanity/lib/image";
+import { urlForImage } from '../../../../sanity/lib/image';
 
 async function getData() {
     const res = await client.fetch(`*[_type == "pokemon"] | order(number asc)`);

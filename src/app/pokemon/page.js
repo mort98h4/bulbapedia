@@ -1,4 +1,4 @@
-import { PokemonList } from "./pokemon_list";
+import { PokemonList } from "./components/pokemon_list";
 import Header from "./header"
 
 export default function Page() {
@@ -8,7 +8,6 @@ export default function Page() {
             <Header title="Pokémon"/>
             <PokemonList />
         </section>
-        
     )
 }
 
