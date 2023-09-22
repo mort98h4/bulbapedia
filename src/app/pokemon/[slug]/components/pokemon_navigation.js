@@ -3,7 +3,7 @@ import Image from "next/image";
 import { urlForImage } from "../../../../../sanity/lib/image";
 import { client } from "../../../../../sanity/lib/client";
 
-async function getNavLinks(num1, num2) {
+async function fetchNavigationPokemons(num1, num2) {
     const res = await client.fetch(`*[_type == "pokemon" && (number match $num1 || number match $num2)] | order(number asc)`, {num1: num1, num2: num2});
     return res;
 }
@@ -36,8 +36,8 @@ function getNumberAsString(num) {
 export default async function PokemonNavigation(props) {
     const pokemon = props.pokemon;
     const soroundingNums = getSoroundingNumbers(pokemon.number);
-    const navPokemons = await getNavLinks(soroundingNums[0], soroundingNums[1]);
-    
+    const navPokemons = await fetchNavigationPokemons(soroundingNums[0], soroundingNums[1]);
+
     return (
         <nav 
             className={
