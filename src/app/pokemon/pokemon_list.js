@@ -48,7 +48,7 @@ export async function PokemonList() {
                             }
                         </div>
                         <div className="col-span-4 flex items-center">
-                            <Link href={"/pokemon/"+pokemon.name.toLowerCase()}>{pokemon.name}</Link>
+                            <Link href={"/pokemon/"+pokemon.name.toLowerCase()} className="font-medium hover:underline">{pokemon.name}</Link>
                         </div>
                         <div className="col-span-4 sm:col-span-3 flex text-white">
                             {pokemon.types.map((type) => (

@@ -4,7 +4,7 @@ import Header from "./header"
 export default function Page() {
     
     return (
-        <section>
+        <section className="grid gap-4">
             <Header title="Pokémon"/>
             <PokemonList />
         </section>
