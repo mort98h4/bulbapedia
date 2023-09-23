@@ -9,6 +9,11 @@ const schema = {
             title: 'Name'
         },
         {
+            name: 'slug',
+            type: 'slug',
+            title: 'Slug'
+        },
+        {
             name: 'primary',
             type: 'string',
             title: 'Primary Color'
