@@ -45,8 +45,8 @@ module.exports = {
           "steel-secondary": "rgba(120, 120, 135, 1)",
           "fairy-primary": "rgba(238, 153, 172, 1)",
           "fairy-secondary": "rgba(155, 100, 112, 1)",
-          "???-primary": "rgba(104, 160, 144, 1)",
-          "???-secondary": "rgba(68, 104, 94, 1)",
+          "%3F%3F%3F-primary": "rgba(104, 160, 144, 1)",
+          "%3F%3F%3F-secondary": "rgba(68, 104, 94, 1)",
         },
       },
     }
@@ -88,8 +88,8 @@ module.exports = {
     'border-types-steel-secondary',
     'bg-types-fairy-primary',
     'border-types-fairy-secondary',
-    'bg-types-???-primary',
-    'border-types-???-secondary',
+    'bg-types-%3F%3F%3F-primary',
+    'border-types-%3F%3F%3F-secondary',
   ],
   plugins: [],
 }
