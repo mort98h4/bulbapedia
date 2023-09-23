@@ -4,14 +4,19 @@ const schema = {
   title: 'Pokémon',
   fields: [
     {
+      name: 'number',
+      type: 'string',
+      title: 'Number'
+    },
+    {
       name: 'name',
       type: 'string',
       title: 'Name'
     },
     {
-      name: 'number',
-      type: 'string',
-      title: 'Number'
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug'
     },
     {
       name: 'image',
@@ -21,10 +26,18 @@ const schema = {
     {
       name: 'types',
       type: 'array',
+      title: 'Types',
       of: [
         {
-          type: 'pokemonType',
-          title: 'Type'
+          type: 'object',
+          fields: [
+            {
+              name: 'type',
+              title: 'Type',
+              type: 'reference',
+              to: [{ type: 'pokemonType' }]
+            }
+          ]
         }
       ]
     },
