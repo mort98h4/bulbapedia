@@ -39,7 +39,7 @@ export default function PokemonListItem(props) {
                     }
                 </div>
                 <div className="col-span-4 flex items-center">
-                    <Link href={"/pokemon/"+pokemon.name.toLowerCase()} className="font-medium hover:underline">{pokemon.name}</Link>
+                    <Link href={"/pokemon/"+pokemon.slug.current} className="font-medium hover:underline">{pokemon.name}</Link>
                 </div>
                 <div className="col-span-4 sm:col-span-3 flex text-white">
                     {pokemon.types.map((type) => (
@@ -48,7 +48,7 @@ export default function PokemonListItem(props) {
                             className={
                                 (pokemon.types.length === 1 ? "basis-full " : "basis-1/2 ") 
                                 + "flex items-center justify-center " 
-                                + "bg-types-" + type.name.toLowerCase() + "-primary"
+                                + "bg-types-" + type.slug.current + "-primary"
                             }
                         >
                             {type.name}

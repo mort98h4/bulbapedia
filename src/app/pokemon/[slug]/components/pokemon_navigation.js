@@ -42,8 +42,8 @@ export default async function PokemonNavigation(props) {
         <nav 
             className={
               "col-span-full grid grid-cols-2 rounded-lg border-2 p-2"
-              + " border-types-" + pokemon.types[0].name.toLowerCase() + "-secondary "
-              + " bg-types-" + pokemon.types[0].name.toLowerCase() + "-primary"
+              + " border-types-" + pokemon.types[0].slug.current + "-secondary "
+              + " bg-types-" + pokemon.types[0].slug.current + "-primary"
             }
         >
             {navPokemons.length === 1 && parseInt(navPokemons[0].number) > parseInt(pokemon.number) ? <div></div> : "" }
@@ -56,7 +56,7 @@ export default async function PokemonNavigation(props) {
                     }
                 >
                     <Link 
-                        href={`/pokemon/${navPoke.name.toLowerCase()}`}
+                        href={`/pokemon/${navPoke.slug.current}`}
                         className="font-medium hover:underline flex items-center"
                     >
                         {parseInt(navPoke.number) < parseInt(pokemon.number) && navPoke.image !== undefined ? 
