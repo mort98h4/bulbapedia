@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { urlForImage } from "../../../../../sanity/lib/image";
+import Link from 'next/link';
 
 export default function PokemonCard(props) {
     const pokemon = props.pokemon;
@@ -38,16 +39,17 @@ export default function PokemonCard(props) {
             <div className="col-span-3 bg-white rounded-lg p-2 text-center">
                 <p className="font-semibold mb-2">Type</p>
                 {pokemon.types.map((type) => (
-                    <span 
+                    <Link 
+                        href={`/types/${type.slug.current}`}
                       className={
-                        "mx-1 p-1 rounded border text-white text-sm font-medium"
+                        "mx-1 p-1 rounded border text-white text-sm font-medium hover:underline"
                         + " bg-types-" + type.slug.current + "-primary"
                         + " border-types-" + type.slug.current + "-secondary"
                       }
                       key={type._id}
                     >
                       {type.name}
-                    </span>
+                    </Link>
                 ))}
             </div>
         </div>
