@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+a.active {
+    @apply font-semibold text-black;
+}
+
 .portableText > p {
     @apply mb-2
 }
