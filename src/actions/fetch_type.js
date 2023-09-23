@@ -7,7 +7,6 @@ export async function fetchType(type) {
     `;
     try {
         const res = await client.fetch(query, {type: type});
-        console.log(res);
         return res;
     } catch (error) {
         console.error("Error fetching data: ", error);
