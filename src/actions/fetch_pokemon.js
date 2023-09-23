@@ -7,6 +7,7 @@ export async function fetchPokemon(pokemon) {
         {
             ...,
             'types': types[].type->{
+                _id,
                 name, 
                 slug
             }
