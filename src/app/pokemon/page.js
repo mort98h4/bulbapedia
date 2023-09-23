@@ -1,5 +1,5 @@
 import { PokemonList } from "./components/pokemon_list";
-import Header from "./header"
+import Header from "../components/header"
 
 export default function Page() {
     
