@@ -11,6 +11,7 @@ export async function fetchPokemons(offset) {
             image,
             slug,
             'types': types[].type->{
+                _id,
                 name, 
                 slug
             }
