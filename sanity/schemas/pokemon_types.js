@@ -14,15 +14,15 @@ const schema = {
             title: 'Slug'
         },
         {
-            name: 'primary',
-            type: 'string',
-            title: 'Primary Color'
-        },
-        {
-            name: 'secondary',
-            type: 'string',
-            title: 'Secondary Color'
-        },
+            name: 'descriptionBlock',
+            title: 'Description',
+            type: 'array',
+            of: [
+              {
+                type: 'block' 
+              }
+            ]
+          }
     ]
 }
 
