@@ -6,6 +6,7 @@ export async function fetchPokemons(offset) {
     const query = `
         *[_type == "pokemon"] | order(number asc)[$offset...$limit]
         {
+            _id,
             number,
             name,
             image,
