@@ -1,4 +1,4 @@
-import Header from "../header";
+import Header from "../../components/header";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import PokemonNavigation from "./components/pokemon_navigation";
