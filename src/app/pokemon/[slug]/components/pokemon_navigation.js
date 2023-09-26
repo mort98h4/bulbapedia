@@ -1,12 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { urlForImage } from "../../../../../sanity/lib/image";
-import { client } from "../../../../../sanity/lib/client";
-
-async function fetchNavigationPokemons(num1, num2) {
-    const res = await client.fetch(`*[_type == "pokemon" && (number match $num1 || number match $num2)] | order(number asc)`, {num1: num1, num2: num2});
-    return res;
-}
+import { fetchNavigationPokemons } from "@/actions/fetch_nav_pokemons";
 
 function getSoroundingNumbers(num) {
     const prev = parseInt(num) - 1;
@@ -62,7 +57,7 @@ export default async function PokemonNavigation(props) {
                     }
                 >
                     <Link 
-                        href={`/pokemon/${navPoke.slug.current}`}
+                        href={`/pokemon/${navPoke.slug}`}
                         className="font-medium hover:underline flex items-center"
                     >
                         {parseInt(navPoke.number) < parseInt(pokemon.number) && navPoke.image !== undefined ? 
