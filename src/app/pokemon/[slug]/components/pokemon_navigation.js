@@ -30,14 +30,8 @@ function getNumberAsString(num) {
 
 export default async function PokemonNavigation(props) {
     const pokemon = props.pokemon;
-    console.log("Current Pokemon: ");
-    console.log(pokemon);
     const soroundingNums = getSoroundingNumbers(pokemon.number);
-    console.log("Sorounding numbers: ");
-    console.log(soroundingNums);
     const navPokemons = await fetchNavigationPokemons(soroundingNums[0], soroundingNums[1]);
-    console.log("Navigation Pokemon: ")
-    console.log(navPokemons);
 
     return (
         <nav 
